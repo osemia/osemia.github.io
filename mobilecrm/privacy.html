@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>콜노트 고객관리 개인정보처리방침 / AfterCall CRM Privacy Policy</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 16px; line-height: 1.65; color: #1d2333; }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+  .muted { color: #667; font-size: .9rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+  td, th { border: 1px solid #dde; padding: 6px 8px; vertical-align: top; text-align: left; }
+  hr { margin: 3rem 0; border: none; border-top: 1px solid #dde; }
+</style>
+</head>
+<body>
+
+<h1>콜노트 고객관리 개인정보처리방침</h1>
+<p class="muted">시행일: 2026년 11월 2일</p>
+
+<p>밝은터(이하 "개발자")는 안드로이드 앱 <b>콜노트 고객관리</b>(영문명 AfterCall CRM, 이하 "앱")가 어떤 정보를 어떻게 다루는지 이 방침으로 알려 드립니다. 앱에는 서버·회원가입·광고·분석 도구가 없습니다.</p>
+
+<h2>1. 개발자가 수집하는 정보</h2>
+<p>개발자는 어떤 개인정보도 수집하거나 전송받지 않습니다. 앱이 다루는 모든 정보는 이용자의 기기 안(앱 전용 저장소)에만 저장됩니다.</p>
+
+<h2>2. 앱이 기기 안에서 다루는 정보</h2>
+<ul>
+  <li><b>통화 정보</b>: 통화가 시작·종료될 때 상대 전화번호, 방향(수신·발신), 시각, 통화 시간. 고객 기록을 남기기 위해서만 쓰며, 폰의 통화 기록 목록은 읽지 않습니다.</li>
+  <li><b>이용자가 입력한 고객 정보</b>: 고객 이름, 상담 메모, 일정, 업종 템플릿 항목.</li>
+  <li><b>연락처</b>: 수신 시 이름을 보여 주고, 이용자가 선택하면 고객을 폰 연락처에 저장합니다.</li>
+  <li><b>통화 녹음 파일</b>: 폰의 자동 통화 녹음 기능이 만든 파일을 찾아 해당 통화에 연결합니다. 녹음 파일은 옮기거나 업로드하지 않습니다.</li>
+  <li><b>녹음 텍스트 변환</b>: 음성 인식(whisper.cpp)이 기기 안에서 실행되며, 음성과 변환된 글은 외부로 전송되지 않습니다.</li>
+</ul>
+
+<h2>3. 권한과 사용 목적</h2>
+<table>
+<tr><th>권한</th><th>목적</th></tr>
+<tr><td>발신자 확인 및 스팸 앱 역할(통화 선별)</td><td>수신·발신 통화의 상대 번호를 받아 고객 카드와 통화 후 기록 창을 띄움. 통화를 차단하거나 내용을 듣지 않음</td></tr>
+<tr><td>전화 상태(READ_PHONE_STATE)</td><td>통화 시작·종료 시점을 알아 기록 창을 띄움</td></tr>
+<tr><td>다른 앱 위에 표시</td><td>통화 중 화면 위 고객 카드 표시</td></tr>
+<tr><td>연락처 읽기·쓰기</td><td>발신자 이름 표시, 이용자가 선택한 고객을 연락처에 저장</td></tr>
+<tr><td>오디오 파일 읽기(READ_MEDIA_AUDIO, 안드로이드 12 이하는 저장소 읽기)</td><td>폰 자동 녹음 파일 찾기·연결·기기 안 텍스트 변환</td></tr>
+<tr><td>알림, 정확한 알람, 부팅 후 실행</td><td>상담 일정 알림을 정해진 시각에 보내고 재부팅 후 다시 예약</td></tr>
+<tr><td>포그라운드 서비스(데이터 동기화·미디어 처리)</td><td>백업 업로드와 녹음 텍스트 변환을 진행 알림과 함께 실행</td></tr>
+<tr><td>인터넷, 네트워크 상태</td><td>음성 인식 모델 내려받기, 이용자가 켠 구글 드라이브 백업</td></tr>
+</table>
+<p>앱은 문자(SMS), 접근성 서비스, 모든 파일 접근, 위치, 카메라, 마이크 권한을 쓰지 않습니다.</p>
+
+<h2>4. 외부 연결</h2>
+<ul>
+  <li><b>음성 인식 모델 내려받기</b>: 이용자가 변환 기능을 켜면 공개 모델 파일을 Hugging Face(huggingface.co)에서 내려받습니다. 이때 이용자의 데이터는 보내지 않으며, 일반적인 다운로드처럼 IP 주소 등 접속 정보가 해당 서비스에 남을 수 있습니다.</li>
+  <li><b>구글 드라이브 백업(선택)</b>: 이용자가 켜면 Google 계정으로 로그인해 백업 파일을 <b>이용자 본인의 구글 드라이브 앱 전용 숨김 폴더(appDataFolder)</b>에 저장합니다. 권한 범위는 drive.appdata 하나뿐이라 다른 드라이브 파일은 보거나 바꿀 수 없습니다. 개발자는 이 백업에 접근할 수 없으며, Google의 개인정보처리방침(<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>)이 적용됩니다.</li>
+  <li><b>파일 백업</b>: 이용자가 고른 위치에 zip 파일로 내보내고 가져옵니다.</li>
+</ul>
+<p>광고, 분석, 비정상 종료 보고 도구는 들어 있지 않습니다. 정보를 제3자에게 판매·공유하지 않습니다.</p>
+
+<h2>5. 보관과 삭제</h2>
+<p>기기 안 데이터는 앱 안에서 고객·기록을 지우거나 앱을 삭제하면 지워집니다. 드라이브 백업은 최근 몇 개만 남기고 자동으로 정리되며, 구글 드라이브 → 설정 → 앱 관리에서 이 앱의 숨겨진 데이터를 언제든 삭제할 수 있습니다. 개발자가 따로 보관하는 개인정보는 없습니다.</p>
+
+<h2>6. 아동</h2>
+<p>앱은 사업자·직장인용 도구이며 만 13세 미만 아동을 대상으로 하지 않습니다.</p>
+
+<h2>7. 방침의 변경</h2>
+<p>이 방침이 바뀌면 이 페이지에 새 시행일과 함께 게시합니다.</p>
+
+<h2>8. 문의</h2>
+<p>개인정보 관련 문의: louis.kim38@gmail.com (밝은터)</p>
+
+<hr>
+
+<h1>AfterCall CRM Privacy Policy</h1>
+<p class="muted">Effective date: November 2, 2026</p>
+
+<p>Balgeunteo (밝은터) ("we") explains here how the Android app <b>AfterCall CRM</b> (Korean name 콜노트 고객관리, the "App") handles information. The App has no server, no sign-up, no ads and no analytics.</p>
+
+<h2>1. Information we collect</h2>
+<p>We do not collect or receive any personal information. Everything the App handles stays on your device, in the App's private storage.</p>
+
+<h2>2. Information the App handles on your device</h2>
+<ul>
+  <li><b>Call information</b>: the other party's phone number, direction (incoming/outgoing), time and duration when a call starts and ends. Used only to keep your customer notes. The App does not read your phone's call log.</li>
+  <li><b>Customer information you enter</b>: names, notes, schedules and industry template fields.</li>
+  <li><b>Contacts</b>: used to show a caller's name and, if you choose, to save a customer to your phone contacts.</li>
+  <li><b>Call recordings</b>: the App finds files made by your phone's built-in call recorder and links them to the matching call. Files are not moved or uploaded.</li>
+  <li><b>Transcription</b>: speech recognition (whisper.cpp) runs on your device. Audio and text are never sent anywhere.</li>
+</ul>
+
+<h2>3. Permissions and why</h2>
+<table>
+<tr><th>Permission</th><th>Purpose</th></tr>
+<tr><td>Caller ID &amp; spam app role (call screening)</td><td>Receive the number of incoming and outgoing calls to show the customer card and the after-call note. Calls are never blocked or listened to</td></tr>
+<tr><td>Phone state (READ_PHONE_STATE)</td><td>Know when a call starts and ends</td></tr>
+<tr><td>Display over other apps</td><td>Show the customer card during a call</td></tr>
+<tr><td>Read/write contacts</td><td>Show caller names; save customers you choose to contacts</td></tr>
+<tr><td>Read audio files (READ_MEDIA_AUDIO; storage read on Android 12 and below)</td><td>Find and link call recordings and transcribe them on device</td></tr>
+<tr><td>Notifications, exact alarms, run at startup</td><td>Send schedule reminders on time and re-schedule them after reboot</td></tr>
+<tr><td>Foreground service (data sync, media processing)</td><td>Run backup upload and transcription with a progress notification</td></tr>
+<tr><td>Internet, network state</td><td>Download the speech model; Google Drive backup if you turn it on</td></tr>
+</table>
+<p>The App does not use SMS, accessibility services, all-files access, location, camera or microphone.</p>
+
+<h2>4. External connections</h2>
+<ul>
+  <li><b>Speech model download</b>: when you turn on transcription, a public model file is downloaded from Hugging Face (huggingface.co). None of your data is sent; as with any download, connection data such as your IP address may be logged by that service.</li>
+  <li><b>Google Drive backup (optional)</b>: if you turn it on, you sign in with your Google account and the backup is stored in <b>the hidden app folder (appDataFolder) of your own Google Drive</b>. The only scope used is drive.appdata, so the App cannot see or change your other Drive files. We cannot access this backup. Google's privacy policy applies: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></li>
+  <li><b>File backup</b>: export and import a zip file at a location you choose.</li>
+</ul>
+<p>The App contains no advertising, analytics or crash-reporting SDKs. We do not sell or share information with third parties.</p>
+
+<h2>5. Retention and deletion</h2>
+<p>On-device data is deleted when you delete customers or notes in the App, or uninstall it. Only the most recent Drive backups are kept and older ones are removed automatically; you can delete all of them at any time in Google Drive → Settings → Manage apps (delete hidden app data). We keep no personal data of our own.</p>
+
+<h2>6. Children</h2>
+<p>The App is a business tool and is not directed at children under 13.</p>
+
+<h2>7. Changes</h2>
+<p>If this policy changes, we will post the update on this page with a new effective date.</p>
+
+<h2>8. Contact</h2>
+<p>Privacy questions: louis.kim38@gmail.com (Balgeunteo)</p>
+</body>
+</html>
